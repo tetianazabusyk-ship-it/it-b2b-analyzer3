@@ -396,9 +396,10 @@ RULES:
   // get or ask for API key
   let apiKey = localStorage.getItem('b2b_key') || '';
   if(!apiKey){
-    apiKey = prompt('Вставь свой Anthropic API ключ (sk-ant-api03-...):\n\nОн сохранится в браузере и больше не будет спрашиваться.');
+    apiKey = prompt('🔑 Введи свой Anthropic API ключ:\n\nsk-ant-api03-...\n\nОн сохранится в браузере — больше не спросит.');
     if(!apiKey){document.getElementById('go-btn').disabled=false;document.getElementById('loading').classList.remove('show');return;}
     localStorage.setItem('b2b_key', apiKey.trim());
+    apiKey = apiKey.trim();
   }
 
   try{
